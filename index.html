@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+    <head>
+        <title>Constitution AI</title>
+        <link rel="stylesheet" href="styles.css">
+        <!-- <script defer src="https://pyscript.net/alpha/pyscript.js"></script>
+        <py-script src="main.py"></py-script> -->
+    </head>
+    <body>
+        <div id="textModelDiv">
+            <div id="textDiv">
+                <label for="textInput">Type your Constitutional line here:</label>
+                <button id="submitButton" onclick="submit()">Submit</button>
+                <button id="discardButton" onclick="">Discard Models</button>
+                <button id="discardButton" onclick="discard()">Clear Dictionary</button>
+                <br>
+                <input type="text" id="textInput" name="input">
+                <br>
+                <p>Word number <span id="binaryOutput">0</span>: <span id="textOutput"> 0 </span></p>
+                <button id="tickButton" onclick="tickButton()">✅</button>
+                <button id="crossButton" onclick="crossButton()">❌</button>
+            </div>
+            <canvas id="modelCanvas"></canvas>
+        </div>
+
+        <script src="visualizer.js"></script>
+        <script src="dictionary.js"></script>        
+        <script src="model.js"></script>
+        <script src="utils.js"></script>
+        <script src="buttons.js"></script>
+        <script src="main.js"></script>
+    </body>
+</html>
