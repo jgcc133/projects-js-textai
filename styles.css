@@ -11,7 +11,7 @@ body{
     margin: auto;
     height: 50%;
     width: 80%;
-    vertical-align: text-top;
+    box-sizing: border-box;
 }
 #textModelDiv{
     display: flex;
@@ -35,4 +35,19 @@ button{
 
 button:hover{
     background:rgb(0, 136, 255);
+}
+
+#tickButton{
+    font-size: x-large;
+}
+#crossButton{
+    font-size: x-large;
+}
+#decisionTable{
+    margin-left: auto;
+    margin-right: auto;
+}
+.selectedWord {
+    width: 100px;
+    height: 30px;
 }

@@ -86,3 +86,19 @@ function getRandomColor(){
     const hue=290+Math.random()*260;
     return "hsl("+hue+", 100%, 60%)";
 }
+
+function postWords(wordArray){
+    const wordLimit = 4;
+    const rowLimit = 3;
+    const colLimit = 6;
+    let idx = 0
+    for(let i=1; i <= rowLimit; i++){  
+        for(let j=1; j<=colLimit; j++){
+            var cellID = "outputTable" + i + j;
+            var cell = document.getElementById(cellID);
+            cell.innerText = wordArray[idx] == undefined ? "" : wordArray[idx];
+            idx +=1;
+        }      
+        
+    }
+}

@@ -10,14 +10,48 @@
             <div id="textDiv">
                 <label for="textInput">Type your Constitutional line here:</label>
                 <button id="submitButton" onclick="submit()">Submit</button>
-                <button id="discardButton" onclick="">Discard Models</button>
-                <button id="discardButton" onclick="discard()">Clear Dictionary</button>
+                <button id="discardButton" onclick="discard('TextModel')">Discard Models</button>
+                <button id="clearButton" onclick="discard('Dictionary')">Clear Dictionary</button>
                 <br>
-                <input type="text" id="textInput" name="input">
+                <textarea type="text" id="textInput" name="input"></textarea>
                 <br>
-                <p>Word number <span id="binaryOutput">0</span>: <span id="textOutput"> 0 </span></p>
-                <button id="tickButton" onclick="tickButton()">✅</button>
-                <button id="crossButton" onclick="crossButton()">❌</button>
+                <table id="decisionTable">
+                    <td>
+                        <p>Predicted Words:</p>
+                    </td>
+                    <td>
+                        <button id="tickButton" onclick="tickButton()">✅ Accept ✅</button>
+                        <button id="crossButton" onclick="crossButton()">❌ Reshuffle ❌</button>
+                    </td>
+                </table>
+            <div style="width:100%;">
+                <table id="outputTable">
+                    <tr>
+                        <td><button class="selectedWord" id="outputTable11" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable12" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable13" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable14" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable15" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable16" onclick="inputToText(this)"></button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="selectedWord" id="outputTable21" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable22" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable23" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable24" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable25" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable26" onclick="inputToText(this)"></button></td>
+                    </tr>
+                    <tr>
+                        <td><button class="selectedWord" id="outputTable31" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable32" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable33" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable34" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable35" onclick="inputToText(this)"></button></td>
+                        <td><button class="selectedWord" id="outputTable36" onclick="inputToText(this)"></button></td>
+                    </tr>
+                </table>
+            </div>
             </div>
             <canvas id="modelCanvas"></canvas>
         </div>

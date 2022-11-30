@@ -37,7 +37,7 @@ class Model{
     }
     static backprop(correct=true, model, lr, verbose=false){
         // first step is change last layer based on output array config
-        model.layers[model.layers.length - 1]=Layer.backprop(correct, model.layers[model.layers.length - 1],lr);
+        model.layers[model.layers.length - 1]=Layer.backprop(correct, model.layers.at(-1),lr);
 
         for (let i=model.layers.length-2; i>=0; i--){
             model.layers[i]=Layer.backprop(correct, model.layers[i],lr);
