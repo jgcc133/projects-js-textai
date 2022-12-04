@@ -50,11 +50,8 @@ class WordDict {
         return dict;
     }
     static #split(text){
-        let words = [];
-        words = text.split(' ');
-        for (let i=0; i<words.length; i++){
-            words[i] = words[i].replaceAll(',', '');
-        }
+        // regex to split tokenise
+        const words = text.replace(/[^\w\s]|_/g, function ($1) {return ' ' + $1 + ' ';}).split(/[ ]+/g);
         return words;
     }
     static #pad(array, length){

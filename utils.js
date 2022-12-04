@@ -1,25 +1,4 @@
 
-
-function getInput(input){
-    return input.value;
-}
-
-function preprocess(text, wordDict = new WordDict()){
-    // returns a dictionary of {index: {word: value, count: x}}
-    words = split(text);
-    locations = WordDict.dump(text, wordDict);
-    return wordDict;
-}
-
-function split(text){
-    words = [];
-    words = text.split(' ');
-    for (let i=0; i<words.length; i++){
-        words[i] = words[i].replaceAll(',', '');
-    }
-    return words;
-}
-
 function save(name, item){
     localStorage.setItem(name,JSON.stringify(item));
     return item;
@@ -96,7 +75,13 @@ function postWords(wordArray){
         for(let j=1; j<=colLimit; j++){
             var cellID = "outputTable" + i + j;
             var cell = document.getElementById(cellID);
-            cell.innerText = wordArray[idx] == undefined ? "" : wordArray[idx];
+            if (wordArray[idx] == undefined){
+                cell.innerText = "";
+            }else if(wordArray[idx] == " "){
+                cell.innerText = "<space>";
+            }else{
+                cell.innerText = wordArray[idx];
+            }
             idx +=1;
         }      
         

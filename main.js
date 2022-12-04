@@ -30,12 +30,15 @@ animate();
 function submit(input=document.getElementById("textInput")){
     const outputSet = new Set();
     // 1: Input into Dictionary
-    const userInput = getInput(input);
+    const userInput = input.value;
     var wordDict;
     if(retrieve("Dictionary")){
         wordDict = retrieve("Dictionary");
     }
-    wordDict = preprocess(userInput, wordDict);
+    if(wordDict==undefined){
+        wordDict = new WordDict;
+    }
+    wordDict = WordDict.dump(userInput, wordDict);
     const oneHotArrays = WordDict.oneHot(userInput, wordDict);
     wordDict = save("Dictionary", wordDict);
     
